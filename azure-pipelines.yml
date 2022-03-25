@@ -15,15 +15,10 @@ variables:
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
-- task: DotNetCoreCLI@2
+- task: AzureWebApp@1
   inputs:
-    command: 'publish'
-    publishWebProjects: true
-- task: AzureRmWebAppDeployment@4
-  inputs:
-    ConnectionType: 'AzureRM'
     azureSubscription: 'Azure subscription 1(2d41361f-0150-4554-b8d6-4273b0545710)'
     appType: 'webAppLinux'
-    WebAppName: 'myapp-service-plan'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
-    RuntimeStack: 'DOTNETCORE|3.1'
+    appName: 'dotnet-mg'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    runtimeStack: 'DOTNETCORE|3.1'
