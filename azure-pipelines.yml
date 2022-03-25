@@ -23,5 +23,4 @@ steps:
     deployToSlotOrASE: true
     resourceGroupName: 'myapp-rg'
     slotName: 'production'
-    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
     runtimeStack: 'DOTNETCORE|3.1'
