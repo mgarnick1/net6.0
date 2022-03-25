@@ -19,6 +19,6 @@ steps:
   inputs:
     azureSubscription: 'Azure subscription 1(2d41361f-0150-4554-b8d6-4273b0545710)'
     appType: 'webAppLinux'
-    appName: 'dotnet-mg'
+    appName: 'myapp-service-plan'
     package: '$(System.DefaultWorkingDirectory)/**/*.zip'
     runtimeStack: 'DOTNETCORE|3.1'
