@@ -15,6 +15,10 @@ variables:
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'publish'
+    publishWebProjects: true
 - task: AzureWebApp@1
   inputs:
     azureSubscription: 'Azure subscription 1(2d41361f-0150-4554-b8d6-4273b0545710)'
@@ -25,4 +29,3 @@ steps:
     slotName: 'production'
     package: '$(System.DefaultWorkingDirectory)/**/*.zip'
     runtimeStack: 'DOTNETCORE|3.1'
-- task: PublishBuildArtifacts@1
