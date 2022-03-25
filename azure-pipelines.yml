@@ -25,3 +25,4 @@ steps:
     slotName: 'production'
     package: '$(System.DefaultWorkingDirectory)/**/*.zip'
     runtimeStack: 'DOTNETCORE|3.1'
+- task: PublishBuildArtifacts@1
