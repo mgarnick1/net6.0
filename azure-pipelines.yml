@@ -19,6 +19,9 @@ steps:
   inputs:
     azureSubscription: 'Azure subscription 1(2d41361f-0150-4554-b8d6-4273b0545710)'
     appType: 'webAppLinux'
-    appName: 'myapp-service-plan'
+    appName: 'dotnet-mg'
+    deployToSlotOrASE: true
+    resourceGroupName: 'myapp-rg'
+    slotName: 'production'
     package: '$(System.DefaultWorkingDirectory)/**/*.zip'
     runtimeStack: 'DOTNETCORE|3.1'
